@@ -100,3 +100,13 @@ SWAP = np.matrix([[1,0,0,0],
                   [0,0,1,0],
                   [0,1,0,1],
                   [0,0,0,1]])
+
+class IonTrap:
+    Rx = Rx 
+    Ry = Ry
+    Rz = Rz
+    
+    @staticmethod
+    def R(theta, phi):
+        return np.matrix([[np.cos(theta/2),                    -1j*np.e**(-1j*phi)*np.sin(theta/2)],
+                          [-1j*np.e**(1j*phi)*np.sin(theta/2), np.cos(theta/2)]])
