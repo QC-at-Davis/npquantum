@@ -11,8 +11,17 @@ ket01 = np.kron(ket0,ket1)
 ket10 = np.kron(ket1,ket0)
 ket11 = np.kron(ket1,ket1)
 
+# |psi> = cos(theta/2)|0> + e^(i*phi)*sin(theta/2)|1>
+# 0 <= theta <= pi
+# 0 <= phi <= 2*pi
+def ket_from_angles(theta, phi):
+    ket0_coeff = np.cos(theta/2)
+    ket1_coeff = (np.e**(1j*phi))*np.sin(theta/2)
+    return  ket0_coeff * ket0 + ket1_coeff * ket1
 
-def ketgen(vals):
+## Given a string of 0's and 1's
+## create a ket
+def bin_ket_gen(vals):
     array = []
     for c in vals:
         if c == '0':
@@ -24,7 +33,9 @@ def ketgen(vals):
             return
     return np.matrix(array)
 
-def bragen(vals):
+## given a string of 0's and 1's
+## create a bra
+def bin_bra_gen(vals):
     return ketgen(vals).H
 
 # Pauli Matrices
@@ -55,6 +66,18 @@ S_dagger = R_phi(-np.pi/2)
 # pi/4 rotation
 T = R_phi(np.pi/4)
 T_dagger = R_phi(-np.pi/4)
+
+def Rx(theta):
+    return np.matrix([[np.cos(theta/2), -1j*np.sin(theta/2)],
+                      [-1j*np.sin(theta/2), np.cos(theta/2)]])
+
+def Ry(theta):
+    return np.matrix([[np.cos(theta/2), -np.sin(theta/2)],
+                      [np.sin(theta/2), np.cos(theta/2)]])
+
+def Rz(theta):
+    return np.matrix([[np.e**(-1j*(theta/2)), 0],
+                      [0, np.e**(1j*(theta/2))]])
 
 ## IBM Q Physical gates, all gates get compiled down to U1, U2, U3
 # most universal U gate
