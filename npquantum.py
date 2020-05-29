@@ -92,14 +92,26 @@ def U2(phi, lamb):
 def U1(lamb):
     return U3(0, 0, lamb)
 
+CXtc = np.matrix([[1,0,0,0],
+                  [0,0,0,1],
+                  [0,0,1,0],
+                  [0,1,0,0]])
+
+CXct = np.matrix([[1,0,0,0],
+                  [0,1,0,0],
+                  [0,0,0,1],
+                  [0,0,1,0]])
+
+SWAP = np.matrix([[1,0,0,0],
+                  [0,0,1,0],
+                  [0,1,0,0],
+                  [0,0,0,1]])
+
+CCX = np.eye(8)
+CCX[[6,7]] = CCX[[7,6]]
 
 def to_qiskit_plot(ket):
     return np.squeeze(np.asarray(ket))
-
-SWAP = np.matrix([[1,0,0,0], 
-                  [0,0,1,0],
-                  [0,1,0,1],
-                  [0,0,0,1]])
 
 class IonTrap:
     Rx = Rx 
@@ -110,3 +122,8 @@ class IonTrap:
     def R(theta, phi):
         return np.matrix([[np.cos(theta/2),                    -1j*np.e**(-1j*phi)*np.sin(theta/2)],
                           [-1j*np.e**(1j*phi)*np.sin(theta/2), np.cos(theta/2)]])
+    
+SWAP = np.matrix([[1,0,0,0], 
+                  [0,0,1,0],
+                  [0,1,0,0],
+                  [0,0,0,1]])
