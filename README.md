@@ -1,6 +1,10 @@
 # npquantum 
 
-A collection of mathematical tools for learning quantum circuits, built on `numpy`
+A collection of mathematical tools for learning quantum circuits, built on `numpy`.
+
+`npquantum` has been used in two workshops by Quantum Computing at Davis (QCaD), recorded on YouTube, with slides used for presentation linked in the description of each video:
+* [QCaD-Circuits-I](https://www.youtube.com/watch?v=xW4hcsIde9s)
+* [QCaD-Circuits-II](https://www.youtube.com/watch?v=Os8F87Dz0ps)
 
 ## ⚠️⚠️ WARNING ⚠️⚠️
 
