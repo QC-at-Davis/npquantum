@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libblas-dev liblapack-dev \
     && pip3 install --upgrade pip \
     && pip install wheel\ 
+    seaborn pylatexenc\
     jupyterlab \
     qiskit \
     cirq \
