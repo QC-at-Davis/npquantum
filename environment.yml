@@ -7,3 +7,4 @@ dependencies:
   - pip:
     - qiskit
     - qiskit[visualization]
+    - pytket
