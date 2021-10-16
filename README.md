@@ -16,8 +16,8 @@ A collection of mathematical tools for learning quantum circuits, built on `nump
   * main library file that all other notebook files depend on. It *is* `npquantum`
 * `QCaD-Circuits-I.ipynb` and `QCaD-Circuits-II ipynb`
   * notebooks used for QCaD' 2020 Spring Quarter workshops introducing quantum gates and circuits'
-* `Dockerfile` and `Docker-compose.yml`
-  * Launches the Docker environment to run everything in
+* `environment.yml`
+  * Used to create an environment to run all the notebooks and files in this repository via [conda](https://docs.conda.io/en/latest/), just run `conda env create -f environment.yml`
 
 ### Development
 

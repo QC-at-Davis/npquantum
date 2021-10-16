@@ -1,0 +1,9 @@
+name: npquantum-env
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab
+  - numpy
+  - pip:
+    - qiskit
+    - qiskit[visualization]
